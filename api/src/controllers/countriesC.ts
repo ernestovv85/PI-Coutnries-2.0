@@ -18,7 +18,7 @@ export async function apiInfo() {
         acronym: country.cca3,
         name: country.name.common,
         flag: country.flags[0],
-        continents: country.continents[0],
+        continent: country.continents[0],
         capital:
           country.capital != null ? country.capital[0] : "No tiene capital",
         subregion:
@@ -56,6 +56,7 @@ export async function updateCountry(id: String, body: ICountry) {
     acronym,
     name,
     flag,
+    continent,
     capital,
     subregion,
     area,
@@ -66,6 +67,7 @@ export async function updateCountry(id: String, body: ICountry) {
     acronym,
     name,
     flag,
+    continent,
     capital,
     subregion,
     area,
