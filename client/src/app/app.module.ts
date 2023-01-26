@@ -9,6 +9,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { CardPageComponent } from './components/card-page/card-page.component';
 import { DetailPageComponent } from './components/detail-page/detail-page.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
