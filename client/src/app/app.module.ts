@@ -11,6 +11,7 @@ import { DetailPageComponent } from './components/detail-page/detail-page.compon
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatCardModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],

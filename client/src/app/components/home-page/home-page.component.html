@@ -1,9 +1,11 @@
 <div class="background">
-<nav class="format-navbar">
-  <app-search-bar></app-search-bar>
-  <div>
-    <button>Crear actividad</button>
+  <nav class="format-navbar">
+    <app-search-bar></app-search-bar>
+    <div>
+      <button routerLink="/create">Crear actividad</button>
+    </div>
+  </nav>
+  <div  class="container">
+    <app-card-page  class="cards" routerLink="/detail"></app-card-page>
   </div>
-</nav>
-<app-card-page></app-card-page>
 </div>

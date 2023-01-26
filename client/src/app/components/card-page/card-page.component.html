@@ -1,3 +1,8 @@
-<div *ngFor="let country of allCountries">
-<h1>Nombre {{country.name}}</h1>
-</div>
+
+<mat-card *ngFor="let country of allCountries" class="card">
+  <mat-card-content>
+    <mat-card-title>{{country.name}}</mat-card-title>
+    <mat-card-subtitle>{{country.continent}}</mat-card-subtitle>
+    <img mat-card-image src="{{country.flag}}" class="flag">
+  </mat-card-content>
+</mat-card>
