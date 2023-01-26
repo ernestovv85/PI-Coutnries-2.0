@@ -7,7 +7,7 @@
     "dev": "ts-node-dev src/index.ts",
     "tsc": "tsc",
     "clean": "rimraf dist/ uploads/",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",
