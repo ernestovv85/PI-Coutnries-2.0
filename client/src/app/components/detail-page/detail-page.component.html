@@ -1,1 +1,23 @@
-<p>detail-page works!</p>
+<div class="background">
+  <nav class="nav-detail">
+    <button (click)="goBack()" class="boton">Atrás</button>
+  </nav>
+  <div class="container">
+    <div *ngIf="countryId" class="contenido">
+      <h1>{{ countryId.name }} ({{ countryId.acronym }})</h1>
+      <img src="{{ countryId.flag }}" alt="Not Found" class="img" />
+      <div class="grid">
+        <h3>Capital: {{ countryId.capital }}</h3>
+        <h3>Subregión: {{ countryId.subregion }}</h3>
+        <h3>Área: {{ countryId.area }} km</h3>
+        <h3>Población: {{ countryId.population }} habitantes</h3>
+      </div>
+      <div *ngIf="countryId.activities.length">
+        <h2>Actividades</h2>
+        <div *ngFor="let activity of countryId.activities">
+          <h3>{{activity}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

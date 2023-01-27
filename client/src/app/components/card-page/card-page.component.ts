@@ -9,11 +9,10 @@ import { CountriesService } from 'src/app/services/countries/countries.service';
 })
 export class CardPageComponent {
   allCountries: ICountries[] = [];
-  country!: ICountries;
   constructor(public countries: CountriesService) {}
   
   ngOnInit(): void {
-    this.countries.getCountries().subscribe((countries) => {
+    this.countries.getCountries().subscribe(countries => {
       this.allCountries = countries;
     });
   }

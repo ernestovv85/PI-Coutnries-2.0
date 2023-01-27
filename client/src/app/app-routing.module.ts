@@ -8,7 +8,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 const routes: Routes = [
   {path:'', component:LandingPageComponent},
   {path:'home', component:HomePageComponent},
-  {path:'detail/:id', component:DetailPageComponent},
+  {path:'detail/:_id', component:DetailPageComponent},
   {path:'create', component:CreatePageComponent}
 ];
 
