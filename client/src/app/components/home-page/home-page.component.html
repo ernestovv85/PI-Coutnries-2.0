@@ -10,7 +10,7 @@
       </div>
     </nav>
     <div class="paginado">
-      <button class="botones" (click)="prevPage()">Anterior</button>
+      <button class="botones" (click)="prevPage()" [hidden]="page === 0">Anterior</button>
       &nbsp;
       <button class="botones" (click)="nextPage()" [hidden]="(countries | filtros:page:search).length < 10">Siguiente</button>
     </div>
