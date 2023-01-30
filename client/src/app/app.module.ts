@@ -5,13 +5,12 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CreatePageComponent } from './components/create-page/create-page.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { CardPageComponent } from './components/card-page/card-page.component';
 import { DetailPageComponent } from './components/detail-page/detail-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { FiltrosPipe } from './pipes/filtros.pipe'
 
 @NgModule({
   declarations: [
@@ -19,14 +18,14 @@ import { MatCardModule } from '@angular/material/card'
     LandingPageComponent,
     HomePageComponent,
     CreatePageComponent,
-    SearchBarComponent,
-    CardPageComponent,
-    DetailPageComponent
+    DetailPageComponent,
+    FiltrosPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     BrowserAnimationsModule,
     HttpClientModule

@@ -1,8 +1,0 @@
-
-<mat-card *ngFor="let country of allCountries" class="card"  routerLink="/detail/{{country._id}}">
-  <mat-card-content>
-    <mat-card-title>{{country.name}}</mat-card-title>
-    <mat-card-subtitle>{{country.continent}}</mat-card-subtitle>
-    <img mat-card-image src="{{country.flag}}" class="flag">
-  </mat-card-content>
-</mat-card>

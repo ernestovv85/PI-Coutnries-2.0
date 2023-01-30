@@ -1,5 +1,5 @@
 
-export interface ICountries {
+export interface ICountry {
   _id: String;
   acronym: String;
   name: String;

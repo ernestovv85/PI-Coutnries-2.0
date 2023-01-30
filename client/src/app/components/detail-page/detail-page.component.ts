@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { ICountries } from 'src/app/Interfaces/countries';
+import { ICountry } from 'src/app/Interfaces/countries';
 import { CountriesService } from 'src/app/services/countries/countries.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CountriesService } from 'src/app/services/countries/countries.service';
   styleUrls: ['./detail-page.component.scss']
 })
 export class DetailPageComponent {
-  @Input() countryId?: ICountries
+  @Input() countryId?: ICountry
   constructor(
     private route: ActivatedRoute,
     private country: CountriesService,

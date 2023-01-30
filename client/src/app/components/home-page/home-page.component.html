@@ -1,13 +1,26 @@
 <div class="background">
-  <div class="fijar">
     <nav class="format-navbar">
-      <app-search-bar></app-search-bar>
+      <div class="input-form">
+      <label for="Buscar por nombre">
+        <input type="text" class="input" placeholder="Buscar país" #txtSearch (keyup)="onSearch(txtSearch.value)"/>
+      </label>
+    </div>
       <div>
         <button routerLink="/create" class="boton">Crear actividad</button>
       </div>
     </nav>
-  </div>
+    <div class="paginado">
+      <button class="botones" (click)="prevPage()">Anterior</button>
+      &nbsp;
+      <button class="botones" (click)="nextPage()" [hidden]="(countries | filtros:page:search).length < 10">Siguiente</button>
+    </div>
   <div class="container">
-    <app-card-page class="cards"></app-card-page>
+    <mat-card *ngFor="let country of countries | filtros:page:search" class="card"  routerLink="/detail/{{country._id}}">
+      <mat-card-content>
+        <mat-card-title>{{country.name}}</mat-card-title>
+        <mat-card-subtitle>{{country.continent}}</mat-card-subtitle>
+        <img mat-card-image src="{{country.flag}}" class="flag">
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
