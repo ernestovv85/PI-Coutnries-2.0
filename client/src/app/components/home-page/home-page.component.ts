@@ -10,7 +10,9 @@ import { CountriesService } from 'src/app/services/countries/countries.service';
 export class HomePageComponent implements OnInit {
   countries: ICountry[] = [];
   page: number = 0
-  search : string = ''
+  search: string = ''
+  selected: string = ''
+
   constructor(public countriesService: CountriesService) {}
   
   ngOnInit(): void {

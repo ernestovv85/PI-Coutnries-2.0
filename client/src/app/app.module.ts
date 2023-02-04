@@ -10,7 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
-import { FiltrosPipe } from './pipes/filtros.pipe'
+import { MatSelectModule }from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort'
+import { FiltrosPipe } from './pipes/filtros.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FiltrosPipe } from './pipes/filtros.pipe'
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatSelectModule,
+    MatSortModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
