@@ -9,9 +9,10 @@ export class FiltrosPipe implements PipeTransform {
     countries: ICountry[],
     page: number = 0,
     search: string = '',
-    selected: string = ''
+    selected: string = '',
+    order: string = ''
   ): ICountry[] {
-    if (search.length === 0 && !selected) {
+    if (search.length === 0 && !selected && !order) {
       return countries.slice(page, page + 10);
     }
     let filterData = countries;
@@ -24,6 +25,11 @@ export class FiltrosPipe implements PipeTransform {
       filterData = filterData.filter((country) =>
         country.continent.toLowerCase().includes(selected.toLowerCase())
       );
+    }
+    if(order === 'asc'){
+      filterData = filterData.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    }else{
+      filterData = filterData.sort((a, b) => (a.name < b.name ? 1 : -1));
     }
     return filterData.slice(page, page + 10);
   }

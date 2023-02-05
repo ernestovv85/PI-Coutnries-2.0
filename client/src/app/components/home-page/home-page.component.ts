@@ -12,6 +12,7 @@ export class HomePageComponent implements OnInit {
   page: number = 0
   search: string = ''
   selected: string = ''
+  order: string = ''
 
   constructor(public countriesService: CountriesService) {}
   

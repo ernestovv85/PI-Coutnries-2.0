@@ -1,37 +1,69 @@
 <div class="background">
-    <nav class="format-navbar">
-      <div class="input-form">
+  <header class="format-navbar">
+    <div class="input-form">
       <label for="Buscar por nombre">
-        <input type="text" class="input" placeholder="Buscar país" #txtSearch (keyup)="onSearch(txtSearch.value)"/>
+        <input
+          type="text"
+          class="input"
+          placeholder="Buscar país"
+          #txtSearch
+          (keyup)="onSearch(txtSearch.value)"
+        />
       </label>
     </div>
-      <div>
-        <mat-select class="select" [(ngModel)]="selected" placeholder="Buscar por continente">
-          <mat-option value="Africa">Africa</mat-option>
-          <mat-option value="Antarctica">Antarctica</mat-option>
-          <mat-option value="Asia">Asia</mat-option>
-          <mat-option value="Europe">Europe</mat-option>
-          <mat-option value="North America">North America</mat-option>
-          <mat-option value="South America">South America</mat-option>
-          <mat-option value="Oceania">Oceania</mat-option>
-        </mat-select>
-      </div>
-      <div>
-        <button routerLink="/create" class="boton">Crear actividad</button>
-      </div>
-    </nav>
-    <div class="paginado">
-      <button class="botones" (click)="prevPage()" [hidden]="page === 0">Anterior</button>
-      &nbsp;
-      <button class="botones" (click)="nextPage()" [hidden]="(countries | filtros:page:search:selected).length < 10">Siguiente</button>
+    <div>
+      <mat-select class="order" [(ngModel)]="order" placeholder="Alfabético">
+        <mat-option value="asc">A - Z</mat-option>
+        <mat-option value="des">Z - A</mat-option>
+      </mat-select>
     </div>
-  <div class="container">
-    <mat-card *ngFor="let country of countries | filtros:page:search:selected" class="card"  routerLink="/detail/{{country._id}}">
+    <div>
+      <mat-select
+        class="select"
+        [(ngModel)]="selected"
+        placeholder="Buscar por continente"
+      >
+        <mat-option class="option" value="Africa">Africa</mat-option>
+        <mat-option value="Antarctica">Antarctica</mat-option>
+        <mat-option value="Asia">Asia</mat-option>
+        <mat-option value="Europe">Europe</mat-option>
+        <mat-option value="North America">North America</mat-option>
+        <mat-option value="South America">South America</mat-option>
+        <mat-option value="Oceania">Oceania</mat-option>
+      </mat-select>
+    </div>
+    <div>
+      <button routerLink="/create" class="boton">Crear actividad</button>
+    </div>
+  </header>
+  <section class="paginado">
+    <button class="botones" (click)="prevPage()" [hidden]="page === 0">
+      Anterior
+    </button>
+    &nbsp;
+    <button
+      class="botones"
+      (click)="nextPage()"
+      [hidden]="
+        (countries | filtros : page : search : selected : order).length < 10
+      "
+    >
+      Siguiente
+    </button>
+  </section>
+  <section class="container">
+    <mat-card
+      *ngFor="
+        let country of countries | filtros : page : search : selected : order
+      "
+      class="card"
+      routerLink="/detail/{{ country._id }}"
+    >
       <mat-card-content>
-        <mat-card-title>{{country.name}}</mat-card-title>
-        <mat-card-subtitle>{{country.continent}}</mat-card-subtitle>
-        <img mat-card-image src="{{country.flag}}" class="flag">
+        <mat-card-title>{{ country.name }}</mat-card-title>
+        <mat-card-subtitle>{{ country.continent }}</mat-card-subtitle>
+        <img mat-card-image src="{{ country.flag }}" class="flag" />
       </mat-card-content>
     </mat-card>
-  </div>
+  </section>
 </div>
