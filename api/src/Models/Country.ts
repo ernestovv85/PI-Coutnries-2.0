@@ -13,7 +13,7 @@ export interface ICountry extends Document{
     {
       type: Schema.Types.ObjectId,
       ref: 'Activity'
-    },
+    }
   ];
 }
 
@@ -30,8 +30,8 @@ const CountrySchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Activity'
-    },
-  ],
+    }
+  ]
 });
 
 export default model<ICountry>("Country", CountrySchema);

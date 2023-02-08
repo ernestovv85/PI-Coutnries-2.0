@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IActivity } from 'src/app/Interfaces/activities';
+import { ActivitiesService } from 'src/app/services/activities/activities.service';
 
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
   styleUrls: ['./create-page.component.scss']
 })
-export class CreatePageComponent {
+export class CreatePageComponent implements OnInit{
+  activities: IActivity[] = []
+  
+  constructor(private activitiesService: ActivitiesService) {}
 
+  ngOnInit(): void {
+    
+  }
+
+  
 }

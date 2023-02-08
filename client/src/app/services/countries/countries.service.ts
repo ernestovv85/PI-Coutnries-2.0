@@ -4,19 +4,33 @@ import { Observable } from 'rxjs';
 import { ICountry } from 'src/app/Interfaces/countries';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CountriesService {
+  URL = 'http://localhost:3001/countries';
 
-  URL ='http://localhost:3001/countries'
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getCountries():  Observable<ICountry[]> {
-    return this.http.get<ICountry[]>(this.URL)
+  getCountries(): Observable<ICountry[]> {
+    return this.http.get<ICountry[]>(this.URL);
   }
 
-  getById(_id: String): Observable<ICountry> {
-    return this.http.get<ICountry>(`${this.URL}/${_id}`)
+  getById(_id: string): Observable<ICountry> {
+    return this.http.get<ICountry>(`${this.URL}/${_id}`);
+  }
+
+  update(_id: string): Observable<ICountry> {
+    const body = {
+      acronym: String,
+      name: String,
+      flag: String,
+      continent: String,
+      capital: String,
+      subregion: String,
+      area: String,
+      population: String,
+      activities: Array,
+    };
+    return this.http.put<ICountry>(`${this.URL}/${_id}`, body);
   }
 }
