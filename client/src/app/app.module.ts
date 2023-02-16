@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgOptimizedImage } from '@angular/common';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { CreatePageComponent } from './components/create-page/create-page.component';
@@ -32,7 +33,8 @@ import { FiltrosPipe } from './pipes/filtros.pipe';
     MatSelectModule,
     MatSortModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

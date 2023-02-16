@@ -8,7 +8,7 @@ import { ActivitiesService } from 'src/app/services/activities/activities.servic
   styleUrls: ['./create-page.component.scss']
 })
 export class CreatePageComponent implements OnInit{
-  activities: IActivity[] = []
+  activity?: IActivity
   
   constructor(private activitiesService: ActivitiesService) {}
 

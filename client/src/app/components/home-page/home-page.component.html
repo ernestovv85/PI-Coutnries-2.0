@@ -44,9 +44,7 @@
     <button
       class="botones"
       (click)="nextPage()"
-      [hidden]="
-        (countries | filtros : page : search : selected : order).length < 1
-      "
+      *ngIf="(countries | filtros : page : search : selected : order).length > 0"
     >
       Siguiente
     </button>
@@ -62,7 +60,7 @@
       <mat-card-content>
         <mat-card-title>{{ country.name }}</mat-card-title>
         <mat-card-subtitle>{{ country.continent }}</mat-card-subtitle>
-        <img mat-card-image src="{{ country.flag }}" class="flag" />
+        <img mat-card-image src={{country.flag}} class="flag">
       </mat-card-content>
     </mat-card>
   </section>

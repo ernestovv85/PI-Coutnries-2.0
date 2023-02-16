@@ -1,3 +1,4 @@
+import { IActivity } from "./activities";
 
 export interface ICountry {
   _id: String;
@@ -9,5 +10,5 @@ export interface ICountry {
   subregion: String;
   area: String;
   population: String;
-  activities: [];
+  activities: Array<IActivity>;
 }

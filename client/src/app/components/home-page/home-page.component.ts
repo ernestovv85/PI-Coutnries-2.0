@@ -30,6 +30,7 @@ export class HomePageComponent implements OnInit {
   getCountries(){
     this.countriesService.getCountries().subscribe(countries => {
       this.countries = countries;
+      console.log(this.countries);
     });
   }
 
